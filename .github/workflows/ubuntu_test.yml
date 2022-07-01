@@ -46,9 +46,9 @@ jobs:
       # sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
 
     - name: Installing Desktop Environment (wait for 10 min)
-      run: sudo apt install expect && sudo apt update && sudo apt install ubuntu-desktop gnome-session gnome-desktop
+      run: sudo apt-get install expect && sudo apt update && sudo apt install ubuntu-desktop gnome-session gnome-desktop
     - name: Chrome remote desktop dependings
-      run: sudo apt install xbase-clients python3-psutil 
+      run: sudo apt-get install xbase-clients python3-psutil 
     - name: Installing Google Chrome Headless
       run: |
             sudo useradd -m Ubuntu
