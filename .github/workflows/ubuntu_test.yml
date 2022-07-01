@@ -53,6 +53,13 @@ jobs:
       run: |
             sudo useradd -m Ubuntu
             sudo adduser Ubuntu sudo
+            sudo su
+           apt-get clean
+           cd /var/lib/apt
+           mv lists lists.old
+          mkdir -p lists/partial
+          apt-get clean
+          apt-get update
             echo 'Ubuntu:1234' | sudo chpasswd
             sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
             sudo apt-get update
